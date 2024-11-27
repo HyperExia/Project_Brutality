@@ -185,8 +185,8 @@ const MAXITERATIONS = 32676;
 
 #include "zscript/Monsters/Cacodemons/Cacodemon.zc"
 
-#include "actors/Monsters/Elementals/PB_Elemental.zc"
-#include "actors/Monsters/LostSouls/PB_LSoul.zc"
+#include "zscript/Monsters/Elementals/PB_Elemental.zc"
+#include "zscript/Monsters/LostSouls/PB_LSoul.zc"
 
 //Effects
 #include "zscript/Effects/Casings.txt"
