@@ -17,7 +17,7 @@ Class PB_LSoul : PB_Monster{
 		}
 		Super.Tick();
 	}
-	Override void Die(Actor source, Actor inflictor, int dmgflags = 0, Name MeansOfDeath = 'none'){
+	Override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath){
 		if(isOrbiting() && master && master is "PB_Elemental"){
 			let painMaster = PB_Elemental(master);
 			if(painMaster){painMaster.ReleaseSoul(self);}

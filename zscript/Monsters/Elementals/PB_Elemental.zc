@@ -87,7 +87,7 @@ Class PB_Elemental : PB_Monster{
 		}
 		
 	}
-	override void Die(Actor source, Actor inflictor, int dmgflags = 0, Name MeansOfDeath = 'none'){
+	override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath){
 		if(LostSouls.Size() > 0){
 			for(int i = 0; i < LostSouls.Size(); i++){
 				if(LostSouls[i]){
