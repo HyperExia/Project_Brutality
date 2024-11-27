@@ -46,8 +46,9 @@ Class PB_Elemental : PB_Monster{
 		}else{return true;}
 	}//PESoulStorage
 	void ReleaseSoul(actor soul){
-		if( LostSouls.Size() > 0 && LostSouls.Find(soul) != LostSouls.Size() ){
-			LostSouls.Delete(LostSouls.Find(soul));
+		let PBSoul = PB_LSoul(soul);
+		if( LostSouls.Size() > 0 && LostSouls.Find(PBSoul) != LostSouls.Size() ){
+			LostSouls.Delete(LostSouls.Find(PBSoul));
 			LostSouls.ShrinkToFit();
 		}
 	}
@@ -68,8 +69,8 @@ Class PB_Elemental : PB_Monster{
 		}
 	}
 	override bool CanCollideWith(Actor other, bool passive){
-		//other.master is self && 
-		if( LostSouls.Find(other) != LostSouls.Size() ){return false;}
+		let otherActor = PB_LSoul(other);
+		if( otherActor && LostSouls.Find(otherActor) != LostSouls.Size() ){return false;}
 		return super.CanCollideWith(other, passive);
 	}
 	void PB_DeploySouls(int amount = 3, int maxAmount = maxLSOrbiting, string LSToDeploy = ""){
